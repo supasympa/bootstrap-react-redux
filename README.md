@@ -1,3 +1,3 @@
-# Bootstrap JS / Webpack
+# Bootstrap React / Redux
 
-Some files to bootstrap JS / Webpack projects.
+Some files to bootstrap React / Redux projects
