@@ -1,9 +1,6 @@
-console.log('---- learning d3 ----');
+import React from 'react';
+import ReactDom from 'react-dom';
 
-const stage = document.querySelector('#stage');
+import App from './component/app';
 
-const main = () => {
-  console.log('---- main ----');
-};
-
-main();
+ReactDom.render(<App/>, document.querySelector('#stage'));

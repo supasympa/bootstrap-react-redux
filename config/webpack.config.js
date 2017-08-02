@@ -11,7 +11,7 @@ module.exports = {
   entry: {
     app: './src/index.js',
     vendor: [
-      'd3',
+      'react', 'redux', 'react-redux',
     ],
   },
   output: {
@@ -25,19 +25,27 @@ module.exports = {
     historyApiFallback: true,
   },
   resolve: {
-    extensions: ['.js'],
+    extensions: ['.js', '.jsx'],
   },
   module: {
-
+    rules: [
+      {
+        test: /\.jsx?$/,
+        exclude: /(node_modules)/,
+        use: {
+          loader: 'babel-loader',
+          options: {
+            presets: ['es2015', 'react'],
+            plugins: ['transform-object-rest-spread']
+          }
+        }
+      }
+    ]
   },
   plugins: [
     new webpack.optimize.CommonsChunkPlugin({
       name: 'vendor',
     }),
   ],
-  /*  externals: {
-      // Use external version of React
-      react: 'React',
-      'react-dom': 'ReactDOM',
-    },*/
+
 };
